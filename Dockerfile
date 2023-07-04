@@ -183,7 +183,7 @@ RUN  echo ${LUAJIT_LIB} && echo ${LUAJIT_INC}   && /usr/local/bin/luajit -v &&\
   sed -i "s!^            index  index.html index.htm;!            index  index.html index.htm;\n            #include /etc/nginx/modsec/modsec_rules.conf;!g" /etc/nginx/nginx.conf && \
   cd ~ && \
   git clone https://github.com/certbot/certbot && \
-  cd certbot && \
+  cd certbot/acme && \
   CFLAGS="-I/usr/local/include" LDFLAGS="-L/usr/local/lib" /usr/bin/pip install -r ./readthedocs.org.requirements.txt && \
   CFLAGS="-I/usr/local/include" LDFLAGS="-L/usr/local/lib" /usr/bin/pip install --no-cache-dir \
 	--editable ./acme \
