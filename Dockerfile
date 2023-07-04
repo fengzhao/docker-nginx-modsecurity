@@ -72,7 +72,7 @@ RUN  cd /src/  && wget -c  https://github.com/openresty/luajit2/archive/refs/tag
   make PREFIX=/usr/local/luajit && make install PREFIX=/usr/local/luajit  &&\
   ln -s /usr/local/luajit/bin/luajit /usr/local/bin/luajit
 
-  https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20230410.tar.gz
+ #https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20230410.tar.gz
 
 RUN cd /src/Python-${PYTHON_VERSION} && \
   ./configure --build=$CBUILD --host=$CHOST --prefix=/usr --with-openssl=/src/openssl-${OPENSSL_VERSION} --enable-shared && \
