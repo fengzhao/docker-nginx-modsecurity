@@ -79,7 +79,6 @@ RUN cd /src/Python-${PYTHON_VERSION} && \
   make -j$(nproc) && \
   make -j$(nproc) install && \
   # export LUAJIT_LIB=/usr/local/lib/ export LUAJIT_INC=/usr/local/include/luajit-2.1/
-
   wget -c  https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20220411.tar.gz -O /usr/local/src/luajit2-v2.1-20220411.tar.gz && \
   tar -zxvf luajit2-v2.1-20220411.tar.gz && cd luajit2-2.1-20220411 && \
   make PREFIX=/usr/local/luajit && make install PREFIX=/usr/local/luajit && \
@@ -87,7 +86,6 @@ RUN cd /src/Python-${PYTHON_VERSION} && \
  # 链接库设置
   echo "/usr/local/luajit/lib" >> /etc/ld.so.conf.d/libc.conf && \
   ldconfig  && \
-
  # 临时生效
  export LUAJIT_LIB=/usr/local/luajit/lib    && \ 
  export LUAJIT_INC=/usr/local/luajit/include/luajit-2.1 && \
