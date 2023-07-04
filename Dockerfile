@@ -82,11 +82,11 @@ RUN cd /src/Python-${PYTHON_VERSION} && \
   pip3 install --upgrade pip setuptools && \
   if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi && \
   if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi && \
-  cd /src/LuaJIT-${LUAJIT_VERSION} && \
-  make -j$(nproc) && \
-  make -j$(nproc) install && \
-  ln -sf luajit-${LUAJIT_VERSION}  /usr/local/bin/luajit  && \
-  luajit -v   && \
+  # cd /src/LuaJIT-${LUAJIT_VERSION} && \
+  # make -j$(nproc) && \
+  # make -j$(nproc) install && \
+  # ln -sf luajit-${LUAJIT_VERSION}  /usr/local/bin/luajit  && \
+  # luajit -v   && \
 #   # export LUAJIT_LIB=/usr/local/lib/ export LUAJIT_INC=/usr/local/include/luajit-2.1/
 #   wget -q  https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20220411.tar.gz -O /usr/local/src/luajit2-v2.1-20220411.tar.gz && \
 #   tar -zxvf luajit2-v2.1-20220411.tar.gz && cd luajit2-2.1-20220411 && \
