@@ -68,7 +68,7 @@ RUN cd /src/openssl-${OPENSSL_VERSION} && \
   make -j$(nproc) install
 
 RUN  cd /src/  && wget -c  https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20230410.tar.gz  -O luajit2-v2.1-20230410.tar.gz  &&\
-  tar -zxvf luajit2-v2.1-20230410.tar.gz   && cd luajit2-v2.1-20230410 &&\
+  tar -zxvf luajit2-v2.1-20230410.tar.gz   && cd /src/luajit2-v2.1-20230410 &&\
   make PREFIX=/usr/local/luajit && make install PREFIX=/usr/local/luajit  &&\
   ln -s /usr/local/luajit/bin/luajit /usr/local/bin/luajit
 
