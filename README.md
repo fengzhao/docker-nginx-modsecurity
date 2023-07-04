@@ -1,5 +1,5 @@
 # really/nginx-modsecurity
-Docker container providing [nginx](https://www.nginx.com) with [modsecurity] (https://www.modsecurity.org), [lua](https://www.nginx.com/resources/wiki/modules/lua/) and certbot for [Let's Encrypt](https://letsencrypt.org) SSL certificates
+Docker container providing [nginx](https://www.nginx.com) with [modsecurity](https://www.modsecurity.org), [lua](https://www.nginx.com/resources/wiki/modules/lua/) and certbot for [Let's Encrypt](https://letsencrypt.org) SSL certificates
 
 [![](https://images.microbadger.com/badges/image/really/nginx-modsecurity.svg)](https://microbadger.com/images/really/nginx-modsecurity "Get your own image badge on microbadger.com") [![GitHub issues](https://img.shields.io/github/issues/reallyreally/docker-nginx-modsecurity.svg?style=flat-square)](https://github.com/reallyreally/docker-nginx-modsecurity/issues) [![GitHub license](https://img.shields.io/github/license/reallyreally/docker-nginx-modsecurity.svg?style=flat-square)](https://github.com/reallyreally/docker-nginx-modsecurity/blob/master/LICENSE) [![Docker Pulls](https://img.shields.io/docker/pulls/really/nginx-modsecurity.svg?style=flat-square)](https://github.com/reallyreally/docker-nginx-modsecurity/)
 
