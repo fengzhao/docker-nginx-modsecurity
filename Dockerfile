@@ -89,11 +89,10 @@ RUN cd /src/Python-${PYTHON_VERSION} && \
  # 临时生效
  export LUAJIT_LIB=/usr/local/luajit/lib    && \ 
  export LUAJIT_INC=/usr/local/luajit/include/luajit-2.1 && \
-  # 永久生效
-  tee -a /etc/profile <<'EOF'
-	export LUAJIT_LIB=/usr/local/luajit/lib
-	export LUAJIT_INC=/usr/local/luajit/include/luajit-2.1
-	EOF && \ 
+ #  # 永久生效
+ #  teeexport LUAJIT_LIB=/usr/local/luajit/lib
+	# export LUAJIT_INC=/usr/local/luajit/include/luajit-2.1
+	# EOF && \ 
 source /etc/profile  && \
  /usr/local/bin/luajit -v    && \
   # LuaJIT 2.1.0-beta3 -- Copyright (C) 2005-2017 Mike Pall. http://luajit.org/  
