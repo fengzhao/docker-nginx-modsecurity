@@ -121,6 +121,8 @@ RUN cd /src/ModSecurity && \
   make install
 
 RUN  echo ${LUAJIT_LIB} && echo ${LUAJIT_INC}   && /usr/local/bin/luajit -v &&\
+   export LUAJIT_LIB=/usr/local/luajit/lib   &&\ 
+   export LUAJIT_INC=/usr/local/luajit/include/luajit-2.1  &&\
  cd /src/nginx-${VERSION} && \
   ./configure \
   	--prefix=/etc/nginx \
