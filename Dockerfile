@@ -71,7 +71,10 @@ RUN  cd /src/  && wget -c  https://github.com/openresty/luajit2/archive/refs/tag
   tar -zxvf luajit2-v2.1-20230410.tar.gz   && cd /src/luajit2-2.1-20230410 &&\
   make PREFIX=/usr/local/luajit && make install PREFIX=/usr/local/luajit  &&\
   ln -s /usr/local/luajit/bin/luajit /usr/local/bin/luajit  && \
-  export LUAJIT_LIB=/usr/local/lib/ export LUAJIT_INC=/usr/local/include/luajit-2.1/
+  export LUAJIT_LIB=/usr/local/lib/ export LUAJIT_INC=/usr/local/include/luajit-2.1/  && \
+  echo "export LUAJIT_LIB=/usr/local/luajit/lib" >>  /etc/profile  && \
+  echo "LUAJIT_INC=/usr/local/luajit/include/luajit-2.1"  >>  /etc/profile
+  
  #https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20230410.tar.gz
 
 RUN cd /src/Python-${PYTHON_VERSION} && \
