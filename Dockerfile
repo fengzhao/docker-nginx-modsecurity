@@ -48,8 +48,8 @@ RUN build_pkgs="alpine-sdk apr-dev apr-util-dev autoconf automake binutils-gold 
   wget -qO - http://nginx.org/download/nginx-${VERSION}.tar.gz | tar xzf  - -C /src && \
   echo "Fetching LibPNG Source" && \
   wget -qO - http://prdownloads.sourceforge.net/libpng/libpng-${LIBPNG_VERSION}.tar.gz | tar xzf  - -C /src && \
-  echo "Fetching LUA Jit Source" && \
-  wget -qO - http://luajit.org/download/LuaJIT-${LUAJIT_VERSION}.tar.gz | tar xzf  - -C /src && \
+  # echo "Fetching LUA Jit Source" && \
+  # wget -qO - http://luajit.org/download/LuaJIT-${LUAJIT_VERSION}.tar.gz | tar xzf  - -C /src && \
   echo "Fetching NGX Devel Kit Source" && \
   wget -qO - https://github.com/vision5/ngx_devel_kit/archive/refs/tags/v${NGXDEVELKIT_VERSION}.tar.gz | tar xzf  - -C /src && \
   echo "Fetching LUA Nginx Source" && \
@@ -66,6 +66,13 @@ RUN cd /src/openssl-${OPENSSL_VERSION} && \
   make -j$(nproc) depend && \
   make -j$(nproc) && \
   make -j$(nproc) install
+
+RUN  cd /src/  && wget -c  https://github.com/openresty/luajit2/archive/refs/tags/v2.1-20220411.tar.gz -O /usr/local/src/luajit2-v2.1-20220411.tar.gz  &&\
+  tar -zxvf luajit2-v2.1-20220411.tar.gz && cd luajit2-2.1-20220411 &&\
+  make PREFIX=/usr/local/luajit && make install PREFIX=/usr/local/luajit  &&\
+  ln -s /usr/local/luajit/bin/luajit /usr/local/bin/luajit
+
+  
 
 RUN cd /src/Python-${PYTHON_VERSION} && \
   ./configure --build=$CBUILD --host=$CHOST --prefix=/usr --with-openssl=/src/openssl-${OPENSSL_VERSION} --enable-shared && \
